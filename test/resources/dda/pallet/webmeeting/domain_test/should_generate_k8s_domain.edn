@@ -1,0 +1,7 @@
+{:input {:user :k8s
+         :external-ip "external-ip"
+         :cert-manager :letsencrypt-staging-issuer
+         :fqdn "jira.test.domaindrivenarchitecture.org" :db-user-password "test-password"}
+ :expected {:user :k8s
+            :k8s {:external-ip "external-ip"}
+            :cert-manager :letsencrypt-staging-issuer}}

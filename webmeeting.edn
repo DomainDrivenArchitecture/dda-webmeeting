@@ -1,0 +1,5 @@
+{:user :k8s
+ :fqdn "jitsi.test.domaindrivenarchitecture.org"
+ :external-ip "95.217.161.247"
+ :cert-manager :letsencrypt-staging-issuer}
+ 

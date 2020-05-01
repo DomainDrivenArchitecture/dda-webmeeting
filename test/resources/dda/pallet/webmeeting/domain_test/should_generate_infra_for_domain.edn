@@ -1,0 +1,11 @@
+{:input {:user :k8s
+         :external-ip "external-ip"
+         :cert-manager :letsencrypt-staging-issuer
+         :fqdn "jira.test.domaindrivenarchitecture.org"
+         :db-user-password "test-password"}
+ :expected {:meissa-jira {:user :k8s
+                          :jira {:fqdn "jira.test.domaindrivenarchitecture.org"
+                                 :secret-name "jira-test-domaindrivenarchitecture-org"
+                                 :cluster-issuer "letsencrypt-staging-issuer"
+                                 :db-user-name "jira" :db-user-password "test-password"}
+                          :postgres {:db-user-name "jira" :db-user-password "test-password"}}}}

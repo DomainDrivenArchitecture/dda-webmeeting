@@ -1,0 +1,3 @@
+{:existing [{:node-name "webmeeting"
+             :node-ip "95.217.161.247"}]
+ :provisioning-user {:login "root"}}
