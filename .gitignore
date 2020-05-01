@@ -1,0 +1,15 @@
+pom.xml
+pom.xml.asc
+
+/target/
+
+.lein-deps-sum
+.lein-repl-history
+.lein-plugins/
+.lein-failures
+.nrepl-port
+
+.settings/
+
+logs
+__pycache__
