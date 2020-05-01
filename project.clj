@@ -12,11 +12,9 @@
                  ["releases" :clojars]]
   :deploy-repositories [["snapshots" :clojars]
                         ["releases" :clojars]]
-  :profiles {:dev {:source-paths ["integration/src"
-                                  "test/src"
+  :profiles {:dev {:source-paths ["test/src"
                                   "uberjar/src"]
-                   :resource-paths ["integration/resources"
-                                    "test/resources"]
+                   :resource-paths ["test/resources"]
                    :dependencies
                    [[org.clojure/test.check "1.0.0"]
                     [dda/data-test "0.1.1"]
