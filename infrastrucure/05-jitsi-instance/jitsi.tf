@@ -1,7 +1,3 @@
-locals {
-  zone_id = var.stage == "prod" ? data.terraform_remote_state.aws_dns.outputs.meissa_prod_zone_id : data.terraform_remote_state.aws_dns.outputs.meissa_test_zone_id
-}
-
 resource "hcloud_server" "jitsi" {
   name        = "${var.module}.${var.stage}.meissa"
   image       = "ubuntu-18.04"
@@ -10,7 +6,7 @@ resource "hcloud_server" "jitsi" {
 }
 
 resource "aws_route53_record" "v4" {
-  zone_id = local.zone_id
+  zone_id = data.terraform_remote_state.aws_dns.outputs.dda_test_zone_id
   name    = "${var.module}"
   type    = "A"
   ttl     = "300"
@@ -18,7 +14,7 @@ resource "aws_route53_record" "v4" {
 }
 
 resource "aws_route53_record" "v6" {
-  zone_id = local.zone_id
+  zone_id = data.terraform_remote_state.aws_dns.outputs.dda_test_zone_id
   name    = "${var.module}-neu"
   type    = "AAAA"
   ttl     = "300"

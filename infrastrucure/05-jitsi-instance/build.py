@@ -13,7 +13,7 @@ class MyBuild(DdaSimpleMixin, HetznerMixin, AwsBackendPropertiesMixin, DevopsTer
 
 @init
 def initialize(project):
-    project.build_depends_on('ddadevops>=0.6.0.dev3')
+    project.build_depends_on('ddadevops>=0.7.0.dev')
     stage = environ['STAGE']
     hetzner_api_key = gopass_password_from_path(
         environ.get('HETZNER_API_KEY_PATH', None))
