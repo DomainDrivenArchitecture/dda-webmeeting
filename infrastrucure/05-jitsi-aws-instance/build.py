@@ -3,7 +3,7 @@ from pybuilder.core import task, init
 from ddadevops import *
 
 name = 'webmeeting'
-MODULE = 'jitsi-instance'
+MODULE = 'jitsi-hetzner-instance'
 PROJECT_ROOT_PATH = '../..'
 
 
