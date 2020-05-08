@@ -15,15 +15,13 @@ class MyBuild(DdaSimpleMixin, DevopsTerraformBuild):
 def initialize(project):
     project.build_depends_on('ddadevops>=0.7.0.dev')
     stage = 'test'
-    hetzner_api_key = gopass_password_from_path(
-        environ.get('HETZNER_API_KEY_PATH', None))
+    additional_vars = {"region": "eu-central-1"}
     config = create_devops_terraform_build_config(stage,
                                                   PROJECT_ROOT_PATH,
                                                   MODULE,
-                                                  {},
-                                                  use_workspace=False,)
-    config = add_aws_backend_properties_mixin_config(config, 'prod')
-    config = add_hetzner_mixin_config(config, hetzner_api_key)
+                                                  additional_vars,
+                                                  use_workspace=False,
+                                                  )
     config = add_dda_simple_mixin_config(config, MODULE + '_' + stage + '.edn',
                                          jar_file='target/uberjar/webmeeting-standalone.jar')
     build = MyBuild(project, config)
