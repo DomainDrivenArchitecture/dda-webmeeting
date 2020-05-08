@@ -3,11 +3,11 @@ from pybuilder.core import task, init
 from ddadevops import *
 
 name = 'webmeeting'
-MODULE = 'jitsi-hetzner-instance'
+MODULE = 'jitsi-aws-instance'
 PROJECT_ROOT_PATH = '../..'
 
 
-class MyBuild(DdaSimpleMixin, HetznerMixin, AwsBackendPropertiesMixin, DevopsTerraformBuild):
+class MyBuild(DdaSimpleMixin, AwsBackendPropertiesMixin, DevopsTerraformBuild):
     pass
 
 
