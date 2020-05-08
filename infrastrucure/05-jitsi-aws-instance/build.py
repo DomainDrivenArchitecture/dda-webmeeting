@@ -15,7 +15,8 @@ class MyBuild(DdaSimpleMixin, DevopsTerraformBuild):
 def initialize(project):
     project.build_depends_on('ddadevops>=0.7.0.dev')
     stage = 'test'
-    additional_vars = {"region": "eu-central-1", "path_to_ssh_pub": "/home/user/jitsi/.ssh/jitsi-test.pem"}
+    path_to_ssh_pub=environ.get("SSH_PUB", "~/.ssh/id_rsa.pub")
+    additional_vars = {"region": "eu-central-1", "path_to_ssh_pub": path_to_ssh_pub}
     config = create_devops_terraform_build_config(stage,
                                                   PROJECT_ROOT_PATH,
                                                   MODULE,
