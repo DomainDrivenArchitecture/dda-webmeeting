@@ -1,0 +1,5 @@
+{:user :k8s
+ :fqdn "$fqdn"
+ :external-ip "$ipv4"
+ :cert-manager :letsencrypt-staging-issuer}
+ 
