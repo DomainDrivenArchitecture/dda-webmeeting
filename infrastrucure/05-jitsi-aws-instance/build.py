@@ -14,7 +14,7 @@ class MyBuild(DdaSimpleMixin, DevopsTerraformBuild):
 @init
 def initialize(project):
     project.build_depends_on('ddadevops>=0.7.0.dev')
-    stage = environ['STAGE']
+    stage = 'test'
     hetzner_api_key = gopass_password_from_path(
         environ.get('HETZNER_API_KEY_PATH', None))
     config = create_devops_terraform_build_config(stage,
