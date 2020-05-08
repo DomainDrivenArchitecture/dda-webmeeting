@@ -7,13 +7,14 @@ MODULE = 'jitsi-aws-instance'
 PROJECT_ROOT_PATH = '../..'
 
 
+from subprocess import run
 class MyBuild(DdaSimpleMixin, DevopsTerraformBuild):
     pass
 
 
 @init
 def initialize(project):
-    project.build_depends_on('ddadevops>=0.7.0.dev')
+    project.build_depends_on('ddadevops>=0.7.1')
     stage = 'test'
     path_to_ssh_pub = environ.get("SSH_PUB", "~/.ssh/id_rsa.pub")
     additional_vars = {"region": "eu-central-1",
