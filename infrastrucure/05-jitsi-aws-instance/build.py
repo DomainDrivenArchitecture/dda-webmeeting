@@ -7,7 +7,7 @@ MODULE = 'jitsi-aws-instance'
 PROJECT_ROOT_PATH = '../..'
 
 
-class MyBuild(DdaSimpleMixin, AwsBackendPropertiesMixin, DevopsTerraformBuild):
+class MyBuild(DdaSimpleMixin, DevopsTerraformBuild):
     pass
 
 
